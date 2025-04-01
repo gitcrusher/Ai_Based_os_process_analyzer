@@ -1,0 +1,125 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Use a modern font like Roboto */
+    background: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #1e1e1e; /* Dark sidebar background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 20px;
+    transition: transform 0.3s ease; /* Smooth toggle animation */
+}
+
+.sidebar.hidden {
+    transform: translateX(-250px); /* Hide the sidebar */
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #bb86fc; /* Cyberpunk-inspired neon purple */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: #bb86fc; /* Neon purple hover effect */
+    color: #121212;
+    transform: scale(1.05);
+}
+
+.sidebar ul li a.active {
+    background: #bb86fc;
+    color: #121212;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px; /* To account for the sidebar */
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease; /* Smooth toggle animation */
+}
+
+.main-content.shifted {
+    margin-left: 0; /* Adjust content when sidebar is hidden */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    color: #bb86fc; /* Neon purple headings */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#metrics p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #e0e0e0; /* Light text for metrics */
+}
+
+/* Toggle Button */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 270px;
+    background: #bb86fc;
+    color: #121212;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: left 0.3s ease;
+}
+
+.toggle-btn.hidden {
+    left: 20px; /* Adjust button position when sidebar is hidden */
+}
