@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vampire Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h2>System Metrics</h2>
+        <ul>
+            <li><a href="#" class="active" onclick="showSection('overview')" aria-label="View System Overview">Overview</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Overview Section -->
+        <div id="overview" class="container section">
+            <h1>System Overview</h1>
+            
+            <!-- Metrics Section -->
+            <div id="metrics-row" class="metrics-row">
+                <!-- CPU Meter -->
+                <div class="metric-container" data-type="cpu">
+                    <p><strong>CPU Usage:</strong></p>
+                    <svg class="progress-meter" viewBox="0 0 200 200">
+                        <circle class="meter-bg" cx="100" cy="100" r="90" fill="transparent" stroke="#333" stroke-width="8"/>
+                        <circle class="meter-progress" cx="100" cy="100" r="90" fill="transparent" stroke-width="12"/>
+                        <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="meter-value">0%</text>
+                    </svg>
+                </div>
+
+                <!-- Memory Meter -->
+                <div class="metric-container" data-type="memory">
+                    <p><strong>Memory Usage:</strong></p>
+                    <svg class="progress-meter" viewBox="0 0 200 200">
+                        <circle class="meter-bg" cx="100" cy="100" r="90" fill="transparent" stroke="#333" stroke-width="8"/>
+                        <circle class="meter-progress" cx="100" cy="100" r="90" fill="transparent" stroke-width="12"/>
+                        <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="meter-value">0%</text>
+                    </svg>
+                </div>
+
+                <!-- Disk Meter -->
+                <div class="metric-container" data-type="disk">
+                    <p><strong>Disk Usage:</strong></p>
+                    <svg class="progress-meter" viewBox="0 0 200 200">
+                        <circle class="meter-bg" cx="100" cy="100" r="90" fill="transparent" stroke="#333" stroke-width="8"/>
+                        <circle class="meter-progress" cx="100" cy="100" r="90" fill="transparent" stroke-width="12"/>
+                        <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="meter-value">0%</text>
+                    </svg>
+                </div>
+
+                <!-- Status Indicator -->
+                <div class="status-container">
+                    <p><strong>Status:</strong></p>
+                    <span id="status" class="status-indicator">Fetching...</span>
+                </div>
+            </div>
+
+            <!-- Suggestions Section -->
+            <div id="suggestions">
+                <h2>Suggestions</h2>
+                <ul id="suggestions-list">
+                    <li>Loading...</li>
+                </ul>
+            </div>
+
+            <!-- Anomalies Section -->
+            <div id="anomalies">
+                <h2>Anomalies</h2>
+                <p><strong>Status:</strong> <span id="anomaly-status">Fetching...</span></p>
+                <ul id="anomalies-list">
+                    <li>Loading...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
