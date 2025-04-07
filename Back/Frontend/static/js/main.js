@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Configuration
-    const fetchInterval = 2000; // 10-second updates
+    const fetchInterval = 1000; // 10-second updates
 
     // Navigation function
     window.showSection = function (sectionId) {
