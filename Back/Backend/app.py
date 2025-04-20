@@ -3,18 +3,16 @@ from flask_cors import CORS
 import psutil
 import joblib
 import os
-
-# Import the live route
 from processes_page import live_processes
-app = Flask(__name__)
-app.add_url_rule('/live-processes', 'live_processes', live_processes)
-
 
 # Initialize Flask app with custom static and template folders
 app = Flask(__name__,
             static_folder="../Frontend/static",  # Path to static files
             template_folder="../Frontend/templates")  # Path to templates
 CORS(app)  # Enable CORS for all routes
+
+# Add the live processes route
+app.add_url_rule('/processes', 'live_processes', live_processes)
 
 # Get the directory of the current script
 current_dir = os.path.dirname(os.path.abspath(__file__))
